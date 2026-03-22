@@ -1,3 +1,5 @@
+# Calcium Isotope System Background
+
 Over the past 30 years, the calcium isotope system has emerged as an important complementary tool to be used alongside more commonly used isotopes in carbonate rocks (i.e., C, O, and trace elements) for use in reconstructing past ocean chemistry and carbon cycle dynamics in Earth’s geologic history. Calcium isotope systems such as δ44/40Ca 
 
  <img width="394" height="79" alt="image" src="https://github.com/user-attachments/assets/1eeee98a-78dd-4ff3-8aaf-b77be968271f" />
@@ -16,3 +18,155 @@ Looking at longer-time scales, beyond mass extinction events, subsequent studies
 Post depositional changes to carbonate rock chemistry introduce large sources of uncertainty due to the overprinting of the original chemistry of the rock making it difficult to distinguish between syn and post depositional effects. When a fluid carries a relatively high or low δ18O value when it interacts with the rock or sediments, due to Rayleigh Fractionation, the fluid will impart its isotope value on to the solid phase until they reach an equilibrium state which may be closer to the value of the fluid than the original isotope value of the rock during deposition. Studies have shown that calcium isotopes in conjunction with magnesium isotopes can be used to determine the effect of marine diagenesis on other proxies of importance, such as oxygen and carbon isotopes, allowing for the creation of more accurate isotope records and therefore paleoenvironmental and chemical reconstructions (Ahm et al., 2018). 
 
 In conclusion, the calcium isotope system provides an invaluable tool for use in the reconstruction of paleoenvironmental and chemical states of seas in earth’s history while simultaneously enhancing the accuracy of other widely used isotope systems. The impact of diagenesis on isotope values in carbonates has been a longstanding point of contention, but with the paired use of calcium isotopes with other common isotope systems it may now be possible to distinguish between primary and secondary isotope signals of the sediments. The calcium isotope system may also be used for distinguishing between local and global effects using the ratio of precipitation between calcium carbonate states (aragonite, calcite, dolomite) to provide information on the local chemistry of carbonate platforms. For this system to improve, more work will need to be done developing a comprehensive calcium isotope record through time to better constrain global geological events, largescale isotope excursions, and the evolution of global carbonate production systems.
+
+
+
+# Background on the Project
+
+## Introduction
+
+The primary goal of mathematical modeling in conjunction with data compilation is to compare theoretical mass balance equations with real geological processes. This allows for the identification of processes which occur in real scenarios but are missing from the theoretical models. By increasing the number of variables in the mass balance equations with each iteration of the model, the results become closer to the actual behaviour of the calcium isotopes in carbonate sediments.
+
+## Model 1
+
+Model 1 was constructed using the simple mass balance formula (Eq. 1) with the variables defined in table 1:
+
+δ44CaSW = δ44CaBSE + εcarbonate  (1)
+
+
+Table 1. Table defining the variables used in Eq. 1
+
+<img width="1174" height="341" alt="image" src="https://github.com/user-attachments/assets/bf41dfc3-5937-4a6c-a5af-1aa696bf78b6" />
+
+
+Model 1 displays the key relationship between the carbonate flux and resulting seawater isotopic value. As carbonate sediments precipitate, they primarily remove Ca40, shifting the value of seawater further away from the value of the continental weathering inputs (bulk silicate Earth) as seen in Figure 1. This exemplifies the balance between input and output fluxes in the ocean system.
+
+<img width="515" height="386" alt="image" src="https://github.com/user-attachments/assets/e7ef5cbd-056b-4ef4-b6c4-6f1af3ea43b4" />
+
+Figure 1. Model 1 output displaying the linear relationship between carbonate fractionation factor and the resulting isotopic value of seawater.
+
+## Model 2
+
+Model 2 follows a similar structure to model 1, but instead of a singular term representing the carbonate flux it is separated to represent the contribution of both calcite and aragonite to the total carbonate flux:
+
+δ44CaSW = δ44CaBSE + (farag * εarag) + (fcalc * εcalc) (2)
+
+Table 2. Table defining the variables used in Eq. 2.
+
+<img width="1175" height="380" alt="image" src="https://github.com/user-attachments/assets/50cd0429-cf6e-4186-ac9d-dea1fe071023" />
+
+Model 2 investigates how changing the fraction of carbonate sediment precipitated as either calcite or aragonite impacts the resulting isotopic value of seawater. This is due to the mineralogical differences between aragonite and calcite which results in variable fractionation factors of the two carbonate minerals. Due to aragonite’s larger fractionation factor it can more effectively raise the isotopic value of seawater than calcite. The result of this is that when only considering the effects of aragonite versus calcite precipitation, considerable amounts of aragonite precipitation are required to raise seawater to comparatively high positive isotopic values as seen in Figure 2.
+
+<img width="607" height="455" alt="image" src="https://github.com/user-attachments/assets/577aebd2-089e-48bd-b101-16085f3035b9" />
+
+Figure 2. Model 2 output displaying the relationship between the fraction of carbonate precipitated as either aragonite or calcite and the resulting isotopic value of seawater.
+
+## Model 3
+
+Model 3 builds on the framework of model two by maintaining the separation of calcite and aragonite contributions to the total carbonate flux, while adding a third component attributed to diagenetic carbonate: 
+
+δ44CaSW = δ44CaBSE + farag * εarag - (farag - 1) * (εcalc * fcalc - εdiag * (fcalc - 1)) (3)
+
+Table 3. Table defining the variables used in Eq. 3.
+
+<img width="1175" height="145" alt="image" src="https://github.com/user-attachments/assets/a9f0270d-88fc-41fd-926f-a39ebb2f25d8" />
+
+Model 3 demonstrates that the inclusion of a diagenetic term allows for significantly more negative seawater isotopic values than otherwise possible. The dashed lines display the values achieved with a diagenetic fractionation of zero, or no isotopic contribution by diagenetic carbonate. From Figure 3, the lowest possible δ44/40CaSW achievable with no fractionation from diagenetic material is -0.5‰. The lowest possible δ44/40CaSW achievable with the addition of a diagenetic fractionation of -0.6‰ is -1.5‰. Lower values are possible with the addition of a diagenetic flux with a lower fractionation value.
+
+<img width="590" height="443" alt="image" src="https://github.com/user-attachments/assets/ac58509b-7370-4b31-bf72-cdcf16888716" />
+
+Figure 3. Model 3 output displaying contours of constant seawater isotopic values determined by a balance of the contribution from aragonite, calcite and diagenetic carbonate. The solid contours represent an εdiag value of -0.6‰ while the dashed contours represent an εdiag value of 0‰.
+
+## Results
+
+Considering the results of the mathematical models, hypotheses can be made about the expected trends of the real-world carbonate data. From model 2 the lowest δ44CaSW value achievable with only a calcite and aragonite flux is 0.4‰ at 100% calcite and 0% aragonite precipitation. With the addition of diagenetic carbonate in model 3 an additional diagenetic carbonate flux is required to achieve lower values than observed in model 2 and 1. As mass balance needs to be maintained in the calcium and carbon cycles, the long term mean of carbonate sediments should be fixed at approximately -1‰ due to the mass balance relationship between the continental weathering source and carbonate sediment sink. Additionally, to maintain the mass balance relationship between seawater and carbonate sediments, values should not fall far below the bulk silicate Earth value (-0.96‰). Considering these assumptions derived from models 1, 2 and 3, the real-world distribution of data is expected to follow the histograms presented in Figure 4.
+
+ <img width="916" height="382" alt="image" src="https://github.com/user-attachments/assets/72dd77cb-6669-4946-8a3c-8a1a807add1b" />
+
+Figure 4. Histograms generated following expected trends of carbonate sediments during aragonite and calcite sea periods. Values were not generated relying on a real data function but instead were generated using values to fit data to a specified curve.
+
+<img width="976" height="499" alt="image" src="https://github.com/user-attachments/assets/bc1cc0d7-59d8-4b41-a429-d1bc087173ed" />
+
+Figure 5. Timeline plot of collected carbonate δ44/40Ca values. Yellow intervals are calcite sea intervals, blue intervals are aragonite sea intervals (intervals from Hardie and Lawrence, 1996 and Ries et al., 2008). The white line is a LOWESS fit line created using the data points.
+
+To observe trends related to large scale carbon release events, several key events were plotted against the x axis. While many of these events don’t display obvious trends in the data, the Marinoan Glacial Period displays a possible correlation with the LOWESS fit line which is plotted in white (Figure 5). Averaged over the entire age span of the plot, δ44/40Cacarbonate values have a mean of ~-1‰ which follows the theorized trend. The most positive δ44/40Cacarbonate values occur within the last 50 Ma.
+
+ <img width="968" height="403" alt="image" src="https://github.com/user-attachments/assets/5e163658-2659-4058-9055-26106f76e6ea" />
+
+Figure 6. Histogram of collected data points separated by time bins of either being within an aragonite sea period or calcite sea period.
+
+When comparing Figure 5, and Figure 6 several distinctions can be made between the modeled and real-world data. The mean of both hypothetical and real-world data conforms to an average mean ~-1‰, which was expected based on the continental weathering flux to the ocean and maintaining mass balance. Contrary to the initial assumptions a considerable amount of data points fall below the hypothesized lower threshold limit of bulk silicate Earth (-0.96‰). Considering the expected fractionation due to mineralogical differences, the real-world data does not follow the expected fractionation of calcite versus aragonite dominant carbonates, and instead the majority are below 0‰.
+
+## Discussion
+
+When comparing the model results and the real-world data, disparities become apparent in the distribution of isotopic values, which cannot be mediated without the consideration of diagenetic carbonates. Figure 3 demonstrates that with the addition of a diagenetic component, isotopic values can be pushed much lower than carbonates without this component. The data indicates that the effect of cyclical aragonite-calcite sea periods may not be as strong a forcing on the long-term calcium isotope values of carbonates as previously theorized. The diagenetic component of the ocean mass balance system acts as a control, normalizing values throughout time. As diagenetic fluids can continuously exchange with seawater, this can result in a burial flux which is not disconnected from the ocean system. Carbonate sediments may continuously exchange isotopic values not only during their deposition but also as they form. This allows for a buffered exchange caused by diagenetic fluxes between the sediment and seawater sinks.
+Diagenetic alteration could potentially force a change in phase of carbonate minerals such as aragonite (Munnecke et al., 2023). The dissolution of aragonite in sediments by diagenetic fluids may create an additional calcium isotope flux back into the pore fluids. This effect creates a system which concentrates calcium 40 in the solid phase possibly resulting in strongly negative values as seen in Figure 6.
+	The preferential precipitation of aragonite and calcite has been attributed to the Mg:Ca ratio at variable temperatures (Figure 7), which is observed as a gradient rather than a sharp transition (Balthasar and Cusack, 2015). On long timescales this mixed portion may exist as the dominant condition resulting in carbonate sediments which conform neither to calcite nor aragonite mineralogy allowing for more constant isotopic values over time.
+
+<img width="679" height="460" alt="image" src="https://github.com/user-attachments/assets/4ccc0944-92da-4a0f-9fe4-4dcf8da573e6" />
+
+Figure 7. Plot displaying how the relationship between Mg/Ca (x-axis) and temperature (y-axis) controls the polymorph of CaCO3 which will precipitate at given conditions (by Balthasar and Cusack, 2015).
+
+## Conclusion
+
+The goal of this study was to create a high-resolution compilation of primary data to observe long-term trends of calcium isotopes in carbonate rocks. The theory of aragonite and calcite sea periods has been widely accepted, but with the recent research documented in this study it is apparent that the calcium cycle is more complex than previously understood. The mass balance relationship is not a direct relationship but instead reflects a process involving constant exchange between sinks, phases of matter, and mineralogy. Further investigation of the calcium isotope system allows for a more robust understanding of how carbonates are altered throughout time as well as how researchers may begin to reconstruct the original isotopic values of carbonates. This further knowledge will consequently enhance the accuracy of many isotope systems. 
+Understanding when and why calcium isotopes are exchanged between the ocean and sediment will also allow researchers to effectively identify major events in Earth history. The calcium isotope system has the potential to inform research on not only carbon release or biological events but continental configurations, weathering rates, climate states, and sea level. With more research into the mechanisms controlling these fluxes the calcium isotope system may become a widespread and invaluable tool for the Earth sciences.
+
+### References
+
+Ahm, A.-S. C., Bjerrum, C. J., Blättler, C. L., Swart, P. K., & Higgins, J. A. (2018). Quantifying early marine diagenesis in shallow-water carbonate sediments. Geochimica et Cosmochimica Acta, 236, 140–159. https://doi.org/10.1016/j.gca.2018.02.042
+Balthasar, U., & Cusack, M. (2015). Aragonite-calcite seas—Quantifying the gray area. Geology, 43(2), 99–102. https://doi.org/10.1130/G36293.1
+Gussone, N., Ahm, A.-S. C., Lau, K. V., & Bradbury, H. J. (2020). Calcium isotopes in deep time: Potential and limitations. Chemical Geology, 544, 119601. https://doi.org/10.1016/j.chemgeo.2020.119601
+Gussone, N., Böhm, F., Eisenhauer, A., Dietzel, M., Heuser, A., Teichert, B. M. A., Reitner, J., Wörheide, G., & Dullo, W.-C. (2005). Calcium isotope fractionation in calcite and aragonite. Geochimica et Cosmochimica Acta, 69(18), 4485–4494. https://doi.org/10.1016/j.gca.2005.06.003
+Higgins, J. A., Blättler, C. L., Lundstrom, E. A., Santiago-Ramos, D. P., Akhtar, A. A., Crüger Ahm, A.-S., Bialik, O., Holmden, C., Bradbury, H., Murray, S. T., & Swart, P. K. (2018). Mineralogy, early marine diagenesis, and the chemistry of shallow-water carbonate sediments. Geochimica et Cosmochimica Acta, 220, 512–534. https://doi.org/10.1016/j.gca.2017.09.046
+Munnecke, A., Wright, V. P., & Nohl, T. (2023). The origins and transformation of carbonate mud during early marine burial diagenesis and the fate of aragonite: A stratigraphic sedimentological perspective. Earth-Science Reviews, 239, 104366. https://doi.org/10.1016/j.earscirev.2023.104366
+Silva-Tamayo, J. C., Lau, K. V., Jost, A. B., Payne, J. L., Wignall, P. B., Newton, R. J., Eisenhauer, A., Depaolo, D. J., Brown, S., Maher, K., Lehrmann, D. J., Altiner, D., Yu, M., Richoz, S., & Paytan, A. (2018). Global perturbation of the marine calcium cycle during the Permian-Triassic transition. GSA Bulletin, 130(7–8), 1323–1338. https://doi.org/10.1130/B31818.1
+Skulan, J., DePaolo, D. J., & Owens, T. L. (1997). Biological control of calcium isotopic abundances in the global calcium cycle. Geochimica et Cosmochimica Acta, 61(12), 2505–2510. https://doi.org/10.1016/S0016-7037(97)00047-1
+
+
+### Database References
+Adiatma, Y. D., Saltzman, M. R., & Griffith, E. M. (2024). Calcium isotope constraints on a Middle Ordovician carbon isotope excursion. Earth and Planetary Science Letters, 641, 118805. https://doi.org/10.1016/j.epsl.2024.118805
+Ahm, A.-S. C., Bjerrum, C. J., Hoffman, P. F., Macdonald, F. A., Maloof, A. C., Rose, C. V., Strauss, J. V., & Higgins, J. A. (2021). The Ca and Mg isotope record of the Cryogenian Trezona carbon isotope excursion. Earth and Planetary Science Letters, 568, 117002. https://doi.org/10.1016/j.epsl.2021.117002
+Ahm, A.-S. C., Maloof, A. C., Macdonald, F. A., Hoffman, P. F., Bjerrum, C. J., Bold, U., Rose, C. V., Strauss, J. V., & Higgins, J. A. (2019). An early diagenetic deglacial origin for basal Ediacaran “cap dolostones.” Earth and Planetary Science Letters, 506, 292–307. https://doi.org/10.1016/j.epsl.2018.10.046
+Antonelli, M. A., Kendrick, J., Yakymchuk, C., Guitreau, M., Mittal, T., & Moynier, F. (2021). Calcium isotope evidence for early Archaean carbonates and subduction of oceanic crust. Nature Communications, 12(1), 2534. https://doi.org/10.1038/s41467-021-22748-2
+Blättler, C. L., & Higgins, J. A. (2017). Testing Urey’s carbonate–silicate cycle using the calcium isotopic composition of sedimentary carbonates. Earth and Planetary Science Letters, 479, 241–251. https://doi.org/10.1016/j.epsl.2017.09.033
+Blättler, C. L., Kump, L. R., Fischer, W. W., Paris, G., Kasbohm, J. J., & Higgins, J. A. (2017). Constraints on ocean carbonate chemistry and pCO2 in the Archaean and Palaeoproterozoic. Nature Geoscience, 10(1), 41–45. https://doi.org/10.1038/ngeo2844
+Bold, U., Ahm, A.-S. C., Schrag, D. P., Higgins, J. A., Jamsran, E., & Macdonald, F. A. (2020). Effect of dolomitization on isotopic records from Neoproterozoic carbonates in southwestern Mongolia. Precambrian Research, 350, 105902. https://doi.org/10.1016/j.precamres.2020.105902
+Braun, M. G., Anderson, N. T., Bergmann, K. D., Griffith, E. M., & Saltzman, M. R. (2024). Early Mississippian global δ13C excursion is not a diagenetic artifact. Geology, 52(9), 641–645. https://doi.org/10.1130/G52109.1
+Braun, M. G., Bancroft, A. M., Hogancamp, N. J., Stolfus, B. M., Heath, M. N., Clark, R. J., Tassier-Surine, S., Day, J. E., & Cramer, B. D. (2023). Resolving complex stratigraphic architecture across the Burlington shelf and identifying the Devonian-Carboniferous (Hangenberg) and Kinderhookian-Osagean (Tournaisian) boundary biogeochemical events in the type area of the Mississippian subsystem. Geological Society of America Bulletin. https://doi.org/10.1130/B36974.1
+Bryant, R. N., Present, T. M., Ahm, A.-S. C., McClelland, H.-L. O., Razionale, D., & Blättler, C. L. (2022). Early diagenetic constraints on Permian seawater chemistry from the Capitan Reef. Geochimica et Cosmochimica Acta, 328, 1–18. https://doi.org/10.1016/j.gca.2022.04.027
+Bryant, R. N., Todes, J. P., Richardson, J. A., Kalia, T. C., Prave, A. R., Lepland, A., Kirsimäe, K., & Blättler, C. L. (2024). Local sedimentary effects shaped key sulfur records after the Great Oxidation Event. Earth and Planetary Science Letters, 648, 119113. https://doi.org/10.1016/j.epsl.2024.119113
+Busch, J. F., Hodgin, E. B., Ahm, A.-S. C., Husson, J. M., Macdonald, F. A., Bergmann, K. D., Higgins, J. A., & Strauss, J. V. (2022). Global and local drivers of the Ediacaran Shuram carbon isotope excursion. Earth and Planetary Science Letters, 579, 117368. https://doi.org/10.1016/j.epsl.2022.117368
+Crockford, P. W., Kunzmann, M., Blättler, C. L., Kalderon-Asael, B., Murphy, J. G., Ahm, A.-S., Sharoni, S., Halverson, G. P., Planavsky, N. J., Halevy, I., & Higgins, J. A. (2021). Reconstructing Neoproterozoic seawater chemistry from early diagenetic dolomite. Geology, 49(4), 442–446. https://doi.org/10.1130/G48213.1
+De La Rocha, C. L., & DePaolo, D. J. (2000). Isotopic Evidence for Variations in the Marine Calcium Cycle Over the Cenozoic. Science, 289(5482), 1176–1178. https://doi.org/10.1126/science.289.5482.1176
+Deng, Y., Guo, Q., Zhang, G., Chen, F., Yang, S., He, G., Lai, H., Chen, D., Fang, Y., Kuang, Z., Cao, J., Zhu, Y., Usman, D., Liu, Y., Zhao, B., Jiang, X., & Zhao, M. (2025). The potential of seep carbonates to preserve the seawater isotope compositions. Communications Earth & Environment, 6(1), 407. https://doi.org/10.1038/s43247-025-02388-w
+Erhardt, A. M., Turchyn, A. V., Bradbury, H. J., & Dickson, J. A. D. (2020). The calcium isotopic composition of carbonate hardground cements: A new record of changes in ocean chemistry? Chemical Geology, 540, 119490. https://doi.org/10.1016/j.chemgeo.2020.119490
+Fantle, M. S., & DePaolo, D. J. (2005). Variations in the marine Ca cycle over the past 20 million years. Earth and Planetary Science Letters, 237(1–2), 102–117. https://doi.org/10.1016/j.epsl.2005.06.024
+Fantle, M. S., & DePaolo, D. J. (2007). Ca isotopes in carbonate sediment and pore fluid from ODP Site 807A: The Ca2+(aq)–calcite equilibrium fractionation factor and calcite recrystallization rates in Pleistocene sediments. Geochimica et Cosmochimica Acta, 71(10), 2524–2546. https://doi.org/10.1016/j.gca.2007.03.006
+Farkaš, J., Böhm, F., Wallmann, K., Blenkinsop, J., Eisenhauer, A., Van Geldern, R., Munnecke, A., Voigt, S., & Veizer, J. (2007). Calcium isotope record of Phanerozoic oceans: Implications for chemical evolution of seawater and its causative mechanisms. Geochimica et Cosmochimica Acta, 71(21), 5117–5134. https://doi.org/10.1016/j.gca.2007.09.004
+Farkaš, J., Buhl, D., Blenkinsop, J., & Veizer, J. (2007). Evolution of the oceanic calcium cycle during the late Mesozoic: Evidence from δ44/40Ca of marine skeletal carbonates. Earth and Planetary Science Letters, 253(1–2), 96–111. https://doi.org/10.1016/j.epsl.2006.10.015
+Farkaš, J., Frýda, J., & Holmden, C. (2016). Calcium isotope constraints on the marine carbon cycle and CaCO3 deposition during the late Silurian (Ludfordian) positive δ13C excursion. Earth and Planetary Science Letters, 451, 31–40. https://doi.org/10.1016/j.epsl.2016.06.038
+Gothmann, A. M., Bender, M. L., Blättler, C. L., Swart, P. K., Giri, S. J., Adkins, J. F., Stolarski, J., & Higgins, J. A. (2016). Calcium isotopes in scleractinian fossil corals since the Mesozoic: Implications for vital effects and biomineralization through time. Earth and Planetary Science Letters, 444, 205–214. https://doi.org/10.1016/j.epsl.2016.03.012
+Griffith, E. M., Paytan, A., Eisenhauer, A., Bullen, T. D., & Thomas, E. (2011). Seawater calcium isotope ratios across the Eocene-Oligocene transition. Geology, 39(7), 683–686. https://doi.org/10.1130/G31872.1
+Higgins, J. A., Blättler, C. L., Lundstrom, E. A., Santiago-Ramos, D. P., Akhtar, A. A., Crüger Ahm, A.-S., Bialik, O., Holmden, C., Bradbury, H., Murray, S. T., & Swart, P. K. (2018). Mineralogy, early marine diagenesis, and the chemistry of shallow-water carbonate sediments. Geochimica et Cosmochimica Acta, 220, 512–534. https://doi.org/10.1016/j.gca.2017.09.046
+Husson, J. M., Higgins, J. A., Maloof, A. C., & Schoene, B. (2015). Ca and Mg isotope constraints on the origin of Earth’s deepest δ 13 C excursion. Geochimica et Cosmochimica Acta, 160, 243–266. https://doi.org/10.1016/j.gca.2015.03.012
+Jones, D. S., Brothers, R. W., Crüger Ahm, A.-S., Slater, N., Higgins, J. A., & Fike, D. A. (2020). Sea level, carbonate mineralogy, and early diagenesis controlled δ13C records in Upper Ordovician carbonates. Geology, 48(2), 194–199. https://doi.org/10.1130/G46861.1
+Jost, A. B., Bachan, A., Van De Schootbrugge, B., Brown, S. T., DePaolo, D. J., & Payne, J. L. (2017). Additive effects of acidification and mineralogy on calcium isotopes in Triassic/Jurassic boundary limestones. Geochemistry, Geophysics, Geosystems, 18(1), 113–124. https://doi.org/10.1002/2016GC006724
+Kasemann, S. A., Hawkesworth, C. J., Prave, A. R., Fallick, A. E., & Pearson, P. N. (2005). Boron and calcium isotope composition in Neoproterozoic carbonate rocks from Namibia: Evidence for extreme environmental change. Earth and Planetary Science Letters, 231(1–2), 73–86. https://doi.org/10.1016/j.epsl.2004.12.006
+Kimmig, S. R., & Holmden, C. (2017). Multi-proxy geochemical evidence for primary aragonite precipitation in a tropical-shelf ‘calcite sea’ during the Hirnantian glaciation. Geochimica et Cosmochimica Acta, 206, 254–272. https://doi.org/10.1016/j.gca.2017.03.010
+Lau, K. V., Maher, K., Brown, S. T., Jost, A. B., Altıner, D., DePaolo, D. J., Eisenhauer, A., Kelley, B. M., Lehrmann, D. J., Paytan, A., Yu, M., Silva-Tamayo, J. C., & Payne, J. L. (2017). The influence of seawater carbonate chemistry, mineralogy, and diagenesis on calcium isotope variations in Lower-Middle Triassic carbonate rocks. Chemical Geology, 471, 13–37. https://doi.org/10.1016/j.chemgeo.2017.09.006
+Li, Y., Wang, X., Yan, W., Wei, G., Hu, Y., Zhang, F., & Shen, S. (2025). The effects of mineralogy and early diagenesis on the Cenozoic carbonate Ca and Mg isotopic records from the South China Sea. Global and Planetary Change, 248, 104757. https://doi.org/10.1016/j.gloplacha.2025.104757
+Liu, X.-F., Liu, X.-M., Zhai, S., Zhang, Z., Bi, D., Wang, X.-K., Cao, C., & Liu, X. (2024). A dolomite-based record of seawater calcium isotope composition over the Neogene. Geochimica et Cosmochimica Acta, 368, 1–11. https://doi.org/10.1016/j.gca.2024.01.004
+Lonsdale, M. C. (2025). Regional perspectives on global geobiological transitions across the neoproterozoic era [Johns Hopkins]. https://jscholarship.library.jhu.edu/handle/1774.2/70550
+Nadeau, M. D., Murphy, J. G., Hagen, C. J., Wu, Z., Akhtar, A. A., Ahm, A.-S., Stolper, D. A., Maloof, A. C., & Higgins, J. A. (2025). Disentangling global geochemical signals from local diagenetic alteration in shallow-water marine carbonates during OAE1a. Earth and Planetary Science Letters, 666, 119513. https://doi.org/10.1016/j.epsl.2025.119513
+Nelson, L. L., Ahm, A.-S. C., Macdonald, F. A., Higgins, J. A., & Smith, E. F. (2021). Fingerprinting local controls on the Neoproterozoic carbon cycle with the isotopic record of Cryogenian carbonates in the Panamint Range, California. Earth and Planetary Science Letters, 566, 116956. https://doi.org/10.1016/j.epsl.2021.116956
+Payne, J. L., Turchyn, A. V., Paytan, A., DePaolo, D. J., Lehrmann, D. J., Yu, M., & Wei, J. (2010). Calcium isotope constraints on the end-Permian mass extinction. Proceedings of the National Academy of Sciences, 107(19), 8543–8548. https://doi.org/10.1073/pnas.0914065107
+Prow-Fleischer, A. N., Lu, Z., Blättler, C. L., He, T., Singh, P., Kemeny, P. C., Todes, J. P., Pohl, A., Bhattacharya, T., Van De Schootbrugge, B., Wignall, P. B., Todaro, S., & Payne, J. L. (2025). Calcium isotopes support spatial redox gradients on the Tethys European margin across the Triassic-Jurassic boundary. Chemical Geology, 673, 122530. https://doi.org/10.1016/j.chemgeo.2024.122530
+Sawaki, Y., Tahata, M., Ohno, T., Komiya, T., Hirata, T., Maruyama, S., Han, J., & Shu, D. (2014). The anomalous Ca cycle in the Ediacaran ocean: Evidence from Ca isotopes preserved in carbonates in the Three Gorges area, South China. Gondwana Research, 25(3), 1070–1089. https://doi.org/10.1016/j.gr.2013.03.008
+Silva-Tamayo, J. C., Lau, K. V., Jost, A. B., Payne, J. L., Wignall, P. B., Newton, R. J., Eisenhauer, A., Depaolo, D. J., Brown, S., Maher, K., Lehrmann, D. J., Altiner, D., Yu, M., Richoz, S., & Paytan, A. (2018). Global perturbation of the marine calcium cycle during the Permian-Triassic transition. GSA Bulletin, 130(7–8), 1323–1338. https://doi.org/10.1130/B31818.1
+Silva-Tamayo, J. C., Nägler, T. F., Villa, I. M., Kyser, K., Vieira, L. C., Sial, A. N., Narbonne, G. M., & James, N. P. (2010). Global Ca isotope variations in c. 0.7 Ga old post-glacial carbonate successions: Ca isotopes in pre-Marinoan post-glacial carbonates. Terra Nova, 22(3), 188–194. https://doi.org/10.1111/j.1365-3121.2010.00933.x
+Todes, J. P., Blattmann, F. R., Vennemann, T., Schneebeli‐Hermann, E., Bucher, H., Razionale, D. P., & Blättler, C. L. (2025). Smithian–Spathian carbonate geochemistry in the northern Thaynes Group influenced by multiple styles of diagenesis. The Depositional Record, 11(2), 616–636. https://doi.org/10.1002/dep2.321
+Tostevin, R., Bradbury, H. J., Shields, G. A., Wood, R. A., Bowyer, F., Penny, A. M., & Turchyn, A. V. (2019). Calcium isotopes as a record of the marine calcium cycle versus carbonate diagenesis during the late Ediacaran. Chemical Geology, 529, 119319. https://doi.org/10.1016/j.chemgeo.2019.119319
+Wei, G., Hood, A. V. S., Planavsky, N. J., Li, D., Ling, H., & Tarhan, L. G. (2022). Calcium Isotopic Constraints on the Transition From Aragonite Seas to Calcite Seas in the Cambrian. Global Biogeochemical Cycles, 36(5), e2021GB007235. https://doi.org/10.1029/2021GB007235
+Zhao, H., Cui, Y., Zhang, L., Chen, Z.-Q., Algeo, T. J., Liu, Y., Hu, Z., & Sun, J. (2024). Calcium isotope evidence of increased carbonate saturation state during the Frasnian–Famennian boundary event. Earth and Planetary Science Letters, 642, 118876. https://doi.org/10.1016/j.epsl.2024.118876
+
